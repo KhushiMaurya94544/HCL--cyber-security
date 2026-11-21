@@ -1,0 +1,251 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+
+    background:
+        radial-gradient(circle at 20% 20%, #152e70 0%, transparent 35%),
+        radial-gradient(circle at 80% 80%, #42166e 0%, transparent 35%),
+        linear-gradient(135deg, #050816, #0b1025, #101b38);
+}
+
+/* Background glowing locks */
+
+body::before {
+    content: "🔒";
+    position: absolute;
+    top: 7%;
+    left: 8%;
+    font-size: 110px;
+    opacity: 0.12;
+    filter: drop-shadow(0 0 25px #00d9ff);
+    transform: rotate(-20deg);
+    animation: float 5s infinite ease-in-out;
+}
+
+body::after {
+    content: "🔐";
+    position: absolute;
+    bottom: 5%;
+    right: 8%;
+    font-size: 140px;
+    opacity: 0.13;
+    filter: drop-shadow(0 0 30px #a855f7);
+    transform: rotate(15deg);
+    animation: float 6s infinite ease-in-out;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0) rotate(-15deg);
+    }
+    50% {
+        transform: translateY(-25px) rotate(10deg);
+    }
+}
+
+/* Main Login Card */
+
+.container {
+    width: 400px;
+    padding: 38px;
+    position: relative;
+    z-index: 2;
+
+    background: rgba(255, 255, 255, 0.07);
+    backdrop-filter: blur(20px);
+
+    border: 1px solid rgba(0, 217, 255, 0.35);
+    border-radius: 22px;
+
+    box-shadow:
+        0 0 25px rgba(0, 217, 255, 0.15),
+        0 0 70px rgba(138, 43, 226, 0.15);
+
+    text-align: center;
+    animation: appear 1s ease;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(35px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Lock Icon */
+
+.icon {
+    font-size: 55px;
+    margin-bottom: 10px;
+    display: inline-block;
+
+    filter: drop-shadow(0 0 15px #00d9ff);
+    animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        filter: drop-shadow(0 0 5px #00d9ff);
+    }
+    to {
+        filter: drop-shadow(0 0 25px #00d9ff);
+    }
+}
+
+/* Heading */
+
+h1 {
+    color: white;
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-shadow: 0 0 15px #00d9ff;
+}
+
+.subtitle {
+    color: #aab8d4;
+    font-size: 12px;
+    letter-spacing: 2px;
+    margin: 8px 0 25px;
+    text-transform: uppercase;
+}
+
+/* Labels */
+
+form {
+    text-align: left;
+}
+
+label {
+    display: block;
+    color: #7eeaff;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin: 16px 0 7px;
+}
+
+/* Input Fields */
+
+input {
+    width: 100%;
+    padding: 13px 15px;
+
+    background: rgba(5, 12, 32, 0.8);
+    border: 1px solid rgba(0, 217, 255, 0.3);
+    border-radius: 10px;
+
+    color: white;
+    font-size: 14px;
+    outline: none;
+
+    transition: 0.3s;
+}
+
+input::placeholder {
+    color: #7585a7;
+}
+
+input:focus {
+    border-color: #00e5ff;
+    box-shadow: 0 0 15px rgba(0, 229, 255, 0.3);
+}
+
+/* Buttons */
+
+button {
+    width: 100%;
+    padding: 13px;
+    margin-top: 18px;
+
+    border: none;
+    border-radius: 10px;
+
+    background: linear-gradient(90deg, #00c6ff, #7b2ff7);
+    color: white;
+
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 1px;
+
+    cursor: pointer;
+    transition: 0.3s;
+
+    box-shadow: 0 5px 20px rgba(0, 198, 255, 0.2);
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow:
+        0 0 15px #00c6ff,
+        0 0 30px #7b2ff7;
+}
+
+/* Result Message */
+
+.message {
+    margin-top: 20px;
+    padding: 12px;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.success {
+    background: rgba(0, 255, 140, 0.12);
+    color: #4dffad;
+    border: 1px solid #4dffad;
+}
+
+.error {
+    background: rgba(255, 50, 80, 0.12);
+    color: #ff718b;
+    border: 1px solid #ff718b;
+}
+
+/* Footer */
+
+.footer {
+    margin-top: 25px;
+    color: #8292b8;
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+/* Mobile Responsive */
+
+@media (max-width: 480px) {
+    .container {
+        width: 90%;
+        padding: 25px;
+    }
+
+    body::before {
+        font-size: 70px;
+    }
+
+    body::after {
+        font-size: 90px;
+    }
+}
+    
+
+
+   

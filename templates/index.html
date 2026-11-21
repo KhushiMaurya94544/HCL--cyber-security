@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Two Step Verification</title>
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="icon">🔐</div>
+
+    <h1>Secure Login</h1>
+    <p class="subtitle">Two Step Verification System</p>
+
+    <form method="POST">
+
+        <label>Username</label>
+        <input type="text" name="username"
+        placeholder="Enter username" required>
+
+        <label>Password</label>
+        <input type="password" name="password"
+        placeholder="Enter password" required>
+
+        <button type="submit" name="generate">
+            Generate OTP
+        </button>
+
+        <label>Verification Code</label>
+        <input type="text" name="otp"
+        placeholder="Enter 6-digit OTP"
+        maxlength="6" inputmode="numeric">
+
+        <button type="submit" name="verify">
+            Verify & Login
+        </button>
+
+    </form>
+
+    {% if message %}
+        <div class="message {{ status }}">
+            {{ message }}
+        </div>
+    {% endif %}
+
+    <div class="footer">
+        Your Security Is Our Priority
+    </div>
+
+</div>
+
+</body>
+</html>
